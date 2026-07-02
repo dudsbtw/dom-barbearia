@@ -1,0 +1,120 @@
+/* ================================================
+   DOM BARBEARIA — responsive.css
+   Breakpoints: 1024px · 768px · 480px
+   ================================================ */
+
+
+/* ─── TABLET (≤ 1024px) ───────────────────────── */
+
+@media (max-width: 1024px) {
+
+  .servicos__grid { grid-template-columns: 1fr; }
+
+  .equipe__grid { grid-template-columns: repeat(3, 1fr); }
+
+  .agendamento__inner { grid-template-columns: 1fr; }
+
+  .footer__inner { grid-template-columns: 1fr 1fr; }
+  .footer__brand { grid-column: span 2; }
+
+  .galeria__grid { grid-template-columns: repeat(2, 1fr); }
+  .galeria__item--lg { grid-column: span 1; }
+}
+
+
+/* ─── MOBILE (≤ 768px) ────────────────────────── */
+
+@media (max-width: 768px) {
+
+  /* Hero */
+  .hero__title-dom  { font-size: clamp(5rem, 22vw, 8rem); }
+  .hero__title-barb { font-size: clamp(1rem, 5vw, 2rem); }
+  .hero__ctas { flex-direction: column; align-items: flex-start; }
+  .hero__ctas .btn { width: auto; }
+
+  /* Nav mobile drawer */
+  .nav__links {
+    position: fixed;
+    inset: 0 auto 0 auto;
+    right: -100%;
+    width: min(75vw, 300px);
+    background: #0d0d0d;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 1.75rem;
+    gap: 2rem;
+    transition: right 0.32s ease;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.6);
+    border-left: 1px solid var(--borda);
+  }
+
+  .nav__links.open { right: 0; }
+
+  .nav__links a {
+    font-size: 1rem;
+    color: rgba(242,237,228,0.7);
+  }
+
+  .nav__toggle { display: flex; }
+
+  .nav__overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 99;
+  }
+
+  .nav__overlay.visible { display: block; }
+
+  /* Serviços */
+  .servico {
+    grid-template-columns: 2.5rem 1fr auto;
+    gap: 1rem;
+    padding: 1.25rem 0.5rem;
+  }
+
+  /* Galeria */
+  .galeria__grid { grid-template-columns: 1fr 1fr; }
+  .galeria__item--lg { grid-column: span 2; }
+
+  /* Equipe */
+  .equipe__grid {
+    grid-template-columns: 1fr;
+    background: none;
+    gap: 1px;
+  }
+
+  .barbeiro__foto { aspect-ratio: 4 / 3; }
+
+  /* Agendamento */
+  .agendamento__form { padding: 1.75rem; }
+  .form__row { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer__inner { grid-template-columns: 1fr; }
+  .footer__brand { grid-column: span 1; }
+
+  /* Lightbox */
+  .lightbox__prev { left: 0.25rem; }
+  .lightbox__next { right: 0.25rem; }
+}
+
+
+/* ─── PEQUENO (≤ 480px) ───────────────────────── */
+
+@media (max-width: 480px) {
+
+  .hero__title-dom { font-size: clamp(4rem, 25vw, 6rem); }
+
+  .galeria__grid { grid-template-columns: 1fr; }
+  .galeria__item--lg { grid-column: span 1; }
+
+  .galeria__item img,
+  .galeria__item--lg img { height: 220px; }
+
+  .servico__preco { font-size: 1rem; }
+
+  .whatsapp-float { bottom: 1.25rem; right: 1.25rem; width: 50px; height: 50px; }
+}
